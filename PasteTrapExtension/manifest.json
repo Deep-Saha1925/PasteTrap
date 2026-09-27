@@ -1,0 +1,9 @@
+{
+    "manifest_version": 3,
+    "name": "PasteTrap",
+    "version": "1.0.0",
+    "description": "A cybersecurity learning extension for detecting suspicious clipboard-related behavior.",
+    "action": {
+        "default_title": "PasteTrap"
+    }
+}
