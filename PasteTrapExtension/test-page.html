@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>PasteTrap Test Page</title>
+
+</head>
+
+<body>
+
+    <h1>PasteTrap Test Page</h1>
+
+    <p>
+        This page contains simulated clipboard manipulation.
+    </p>
+
+
+    <script>
+
+        document.addEventListener("copy", function(event) {
+
+            event.clipboardData.setData(
+                "text/plain",
+                'echo "Hello"'
+            );
+
+            event.preventDefault();
+
+        });
+
+
+        navigator.clipboard.writeText(
+            'echo "Hello"'
+        );
+
+    </script>
+
+</body>
+
+</html>
