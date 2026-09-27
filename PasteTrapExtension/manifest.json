@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "description": "A cybersecurity learning extension for detecting suspicious clipboard-related behavior.",
     "action": {
-        "default_title": "PasteTrap"
+        "default_title": "PasteTrap",
+        "default_popup": "popup.html"
     }
 }
