@@ -1,16 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "PasteTrap",
-    "version": "1.0.0",
-    "description": "A cybersecurity learning extension for detecting suspicious clipboard-related behavior.",
-    "action": {
-        "default_title": "PasteTrap",
-        "default_popup": "popup.html"
-    },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["content.js"]
-        }
-    ]
+  "manifest_version": 3,
+  "name": "PasteTrap",
+  "version": "1.0.0",
+  "description": "A cybersecurity learning extension for detecting suspicious clipboard-related behavior.",
+
+  "action": {
+    "default_title": "PasteTrap",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
 }
