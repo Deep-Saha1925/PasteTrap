@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PasteTrap - Think Before You Paste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="badge">CYBERSECURITY AWARENESS DEMO</span>
+      <h1>PasteTrap</h1>
+      <p>Think before you copy, paste, or execute random content.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card intro">
+      <h2>What is this?</h2>
+      <p>
+        This safe demonstration shows how copied content can be different from
+        what you think you selected. Nothing is actually sent to an attacker;
+        the "attack" below is completely simulated inside your browser.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>1. Normal text</h2>
+        <p class="muted">This is what you expect to copy.</p>
+
+        <div class="code-box" id="normalText">Hello! This is a normal message.</div>
+
+        <button id="copyNormalBtn" class="btn secondary">Copy Normal Text</button>
+        <div id="normalStatus" class="status"></div>
+      </div>
+
+      <div class="card danger-card">
+        <h2>2. RUN THE COMMAND</h2>
+        <p class="muted">
+          The visible text looks harmless, but the demo secretly places a
+          different string into the clipboard.
+        </p>
+
+        <div class="code-box" id="visibleTrapText">
+          <code>npm run dev</code>
+        </div>
+
+        <button id="copyTrapBtn" class="btn danger">Copy This Text</button>
+        <div id="trapStatus" class="status"></div>
+      </div>
+    </section>
+
+    <section class="card analyzer">
+      <h2>3. Paste Analyzer</h2>
+      <p class="muted">
+        Paste the clipboard content below. The analyzer checks for suspicious
+        patterns without executing anything.
+      </p>
+
+      <textarea
+        id="pasteBox"
+        rows="8"
+        placeholder="Paste copied content here..."
+        spellcheck="false"
+      ></textarea>
+
+      <div class="actions">
+        <button id="analyzeBtn" class="btn primary">Analyze Paste</button>
+        <button id="clearBtn" class="btn secondary">Clear</button>
+      </div>
+
+      <div id="result" class="result hidden"></div>
+    </section>
+
+    <section id="simulation" class="card hidden">
+      <h2>4. Attack Simulation</h2>
+      <p>
+        This is only a training simulation. No real password, cookie,
+        token, or other sensitive information is collected or transmitted.
+      </p>
+
+      <div class="simulation-grid">
+        <div class="fake-secret">
+          <span class="label">Fake secret</span>
+          <strong id="fakeSecret">DEMO_PASSWORD_123</strong>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="attacker-box">
+          <span class="label">Fake attacker panel</span>
+          <strong id="attackerReceived">Nothing received</strong>
+        </div>
+      </div>
+
+      <button id="runSimulationBtn" class="btn danger">Run Safe Simulation</button>
+      <div id="simulationStatus" class="status"></div>
+    </section>
+
+    <section class="card tips">
+      <h2>Remember</h2>
+      <div class="tips-grid">
+        <div>
+          <span class="tip-number">01</span>
+          <p>Do not blindly paste commands from random websites, chats, or comments.</p>
+        </div>
+        <div>
+          <span class="tip-number">02</span>
+          <p>Inspect copied text before executing it in a terminal, shell, console, or script.</p>
+        </div>
+        <div>
+          <span class="tip-number">03</span>
+          <p>Never enter real passwords, API keys, cookies, or tokens into an untrusted demo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    PasteTrap is an educational simulation. It does not perform real data exfiltration.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
