@@ -1,0 +1,12 @@
+body{width:320px;margin:0;padding:18px;font-family:Arial,sans-serif;background:#0b1020;color:#fff}
+h1{margin:0 0 6px;font-size:22px}
+p{color:#aab6c8;line-height:1.5;margin:0}
+button{width:100%;margin-top:14px;padding:11px;border:none;border-radius:8px;background:#2563eb;color:#fff;font-weight:bold;cursor:pointer}
+button:hover{background:#1d4ed8}
+.status{margin-top:14px;padding:12px;border-radius:8px;background:#162033;line-height:1.4;font-size:13px;max-height:320px;overflow:auto}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-weight:bold;font-size:12px}
+.LOW{background:#16a34a}.MEDIUM{background:#d97706}.HIGH{background:#dc2626}
+ul{margin:6px 0 0 18px;padding:0}li{margin-bottom:4px}
+h3{margin:12px 0 2px;font-size:13px;color:#93c5fd}
+code{display:block;margin-top:3px;padding:6px;background:#0b1020;border-radius:6px;color:#fca5a5;word-break:break-all;white-space:pre-wrap;font-size:11px}
+.toggle{display:block;margin-top:12px;font-size:12px;color:#aab6c8}
