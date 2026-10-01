@@ -47,7 +47,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "pastetrap@example.com",
+      "id": "{6dbaccb3-619c-4115-8951-776ccdbafa0f}",
       "strict_min_version": "128.0"
     }
   }
